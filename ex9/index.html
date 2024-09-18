@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Modal</title>
+        <link href="styles.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="master-container">
+            <img src="assets/sky-wallpaper-high-definition-wallpaper-high-definition-background-u6mq7j3x9brszxqf.jpg">
+            <div id="sub-wrapper">
+                <div id="header">
+                    <button onclick="open_modal('login')">Log-in</button>
+                    <button onclick="open_modal('signup')">Sign-up</button>
+                </div>
+            </div>
+        </div>
+        <div id="modal-container">
+            <div id="login-dialog" class="dialog">
+                <div class="form-header">
+                    Bem-vindo(a) de volta!
+                </div>
+                <div class="form-container">
+                    <form>
+                        <input class="field" name="login-email" type="email" placeholder="Insira seu e-mail..."><br>
+                        <input class="field" name="login-pswrd" type="password" placeholder="Insira sua senha..."><br>
+                        <input class="submit-button" type="submit" value="Entrar">
+                    </form>
+                </div>
+            </div>
+            <div id="signup-dialog" class="dialog">
+                <div class="form-header">
+                    Seja bem-vindo(a)!
+                </div>
+                <div class="form-container">
+                    <form id="signup-form">
+                        <input class="field" name="username" type="text" placeholder="Escolha seu usuário..." required><br>
+                        <input class="field" name="email" type="email" placeholder="Digite um e-mail válido..."><br>
+                        <input class="field" name="email-confirm" type="email" placeholder="Repita seu e-mail..."><br>
+                        <input class="field" name="pswrd" type="password" placeholder="Escolha uma senha..."><br>
+                        <input class="field" name="pswrd-confirm" type="password" placeholder="Repita sua senha..."><br>
+                        <input class="submit-button" type="submit" value="Criar conta">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="scripts.js"></script>
+    </body>
+</html>

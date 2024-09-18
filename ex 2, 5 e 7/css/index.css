@@ -1,0 +1,110 @@
+h1 {
+color: orangered;
+margin-bottom: -5px;
+}
+
+P {
+    margin-bottom: -10px;
+} 
+
+.ui {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    border: none;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+     text-align: center;
+     cursor: pointer;
+}
+
+.cell:active {
+    outline: none;
+}
+
+#inp1{ 
+    border-bottom: 1px solid gray; 
+    border-right: 1px solid gray; 
+} 
+  
+#inp2 { 
+    border-bottom: 1px solid gray; 
+    border-right: 1px solid gray; 
+    border-left: 1px solid gray; 
+} 
+  
+#inp3 { 
+    border-bottom: 1px solid gray; 
+    border-left: 1px solid gray; 
+} 
+  
+#inp4 { 
+    border-top: 1px solid gray; 
+    border-bottom: 1px solid gray; 
+    border-right: 1px solid gray; 
+} 
+      
+#inp5 { 
+    border: 1px solid gray; 
+} 
+  
+#inp6 { 
+    border-top: 1px solid gray; 
+    border-bottom: 1px solid gray; 
+    border-left: 1px solid gray; 
+} 
+  
+#inp7 { 
+    border-top: 1px solid gray; 
+    border-right: 1px solid gray; 
+} 
+  
+#inp8 { 
+    border-top: 1px solid gray; 
+    border-right: 1px solid gray; 
+    border-left: 1px solid gray; 
+} 
+  
+#inp9 { 
+    border-top: 1px solid gray; 
+    border-left: 1px solid gray; 
+} 
+
+#button {
+ box-sizing: border-box;
+ width: 95px; 
+ height: 50px; 
+ border: 1px solid dodgerblue; 
+ margin-left: auto; 
+ border-radius: 8px; 
+ font-family: Verdana, Geneva, Tahoma, sans-serif; 
+
+ background-color: whitesmoke; 
+ color: black; 
+ font-size: 15px; 
+ cursor: pointer; 
+}
+
+#printarResultado {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#main {
+ text-align: center;
+}
+
+#ins {
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    color: black;
+}

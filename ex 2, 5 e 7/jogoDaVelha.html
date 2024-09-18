@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Da Velha</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    
+    <div id="main">
+        <h1>Jogo Da velha</h1>
+
+        <p id="ins">
+            O jogo começa com apenas um toque caixa
+            <br><br>O primeiro jogador começa como
+            <b>Player X </b><br> O segundo jogador começa como
+            <b>Player 0 </b>
+        </p>
+        <br><br>
+
+        <div class="ui">
+            <div class="row">
+                <input type="text" id="inp1" class="cell" onclick="myfunc_3(); myfunc();" readonly>
+                <input type="text" id="inp2" class="cell" onclick="myfunc_4(); myfunc();" readonly>
+                <input type="text" id="inp3" class="cell" onclick="myfunc_5(); myfunc();" readonly>
+            </div>
+            <div class="row">
+                <input type="text" id="inp4" class="cell" onclick="myfunc_6(); myfunc();" readonly>
+                <input type="text" id="inp5" class="cell" onclick="myfunc_7(); myfunc();" readonly>
+                <input type="text" id="inp6" class="cell" onclick="myfunc_8(); myfunc();" readonly>
+            </div>
+            <div class="row">
+                <input type="text" id="inp7" class="cell" onclick="myfunc_9(); myfunc();" readonly>
+                <input type="text" id="inp8" class="cell" onclick="myfunc_10(); myfunc();" readonly>
+                <input type="text" id="inp9" class="cell" onclick="myfunc_11(); myfunc();" readonly>
+            </div>
+        </div>
+        <br><br><br>
+
+
+        <button id="button" onclick="myfunc_2()">
+            Reiniciar Jogo
+        </button>
+        <br><br>
+        <P id="print"></P>
+    </div>
+
+
+
+    <script>
+        function myfunc() { 
+  
+  // Setting DOM to all boxes or input field 
+  var inp1, inp2, inp3, inp4, inp5, inp6, inp7, inp8, inp9; 
+  inp1 = document.getElementById("inp1").value; 
+  inp2 = document.getElementById("inp2").value; 
+  inp3 = document.getElementById("inp3").value; 
+  inp4 = document.getElementById("inp4").value; 
+  inp5 = document.getElementById("inp5").value; 
+  inp6 = document.getElementById("inp6").value; 
+  inp7 = document.getElementById("inp7").value; 
+  inp8 = document.getElementById("inp8").value; 
+  inp9 = document.getElementById("inp9").value; 
+
+  var inp1btn, inp2btn, inp3btn, inp4btn, inp5btn,  
+      inp6btn, inp7btn, inp8btn, inp9btn; 
+        
+  inp1btn = document.getElementById("inp1"); 
+  inp2btn = document.getElementById("inp2"); 
+  inp3btn = document.getElementById("inp3"); 
+  inp4btn = document.getElementById("inp4"); 
+  inp5btn = document.getElementById("inp5"); 
+  inp6btn = document.getElementById("inp6"); 
+  inp7btn = document.getElementById("inp7"); 
+  inp8btn = document.getElementById("inp8"); 
+  inp9btn = document.getElementById("inp9"); 
+
+  //Verificando se o Jogador X ganhou ou não e depois    
+  //Que desativou todos os outros campos
+  if ((inp1 == 'x' || inp1 == 'X') && (inp2 == 'x' || 
+      inp2 == 'X') && (inp3 == 'x' || inp3 == 'X')) { 
+      document.getElementById('print') 
+          .innerHTML = "Player X won"; 
+      inp4btn.disabled = true; 
+      inp5btn.disabled = true; 
+      inp6btn.disabled = true; 
+      inp7btn.disabled = true; 
+      inp8btn.disabled = true; 
+      inp9btn.disabled = true; 
+
+      inp1btn.style.color = "red"; 
+      inp2btn.style.color = "red"; 
+      inp3btn.style.color = "red"; 
+  } 
+  else if ((inp1 == 'x' || inp1 == 'X') && (inp4 == 'x' || 
+      inp4 == 'X') && (inp7 == 'x' || inp7 == 'X')) { 
+      document.getElementById('print') 
+          .innerHTML = "Player X won"; 
+      inp2btn.disabled = true; 
+      inp3btn.disabled = true; 
+      inp5btn.disabled = true; 
+      inp6btn.disabled = true; 
+      inp8btn.disabled = true; 
+      inp9btn.disabled = true; 
+
+      inp1btn.style.color = "red"; 
+      inp4btn.style.color = "red"; 
+      inp7btn.style.color = "red"; 
+  } 
+  else if ((inp7 == 'x' || inp7 == 'X') && (inp8 == 'x' || 
+      inp8 == 'X') && (inp9 == 'x' || inp9 == 'X')) { 
+      document.getElementById('print') 
+          .innerHTML = "Player X won"; 
+
+      inp1btn.disabled = true; 
+      inp2btn.disabled = true; 
+      inp3btn.disabled = true; 
+      inp4btn.disabled = true; 
+      inp5btn.disabled = true; 
+      inp6btn.disabled = true; 
+
+      inp7btn.style.color = "red"; 
+      inp8btn.style.color = "red"; 
+      inp9btn.style.color = "red"; 
+  } 
+  else if ((inp3 == 'x' || inp3 == 'X') && (inp6 == 'x' || 
+      inp6 == 'X') && (inp9 == 'x' || inp9 == 'X')) { 
+      document.getElementById('print') 
+          .innerHTML = "Player X won"; 
+
+      inp1btn.disabled = true; 
+      inp2btn.disabled = true; 
+      inp4btn.disabled = true; 
+      inp5btn.disabled = true; 
+      inp7btn.disabled = true; 
+      inp8btn.disabled = true; 
+
+      inp3btn.style.color = "red"; 
+      inp6btn.style.color = "red"; 
+      inp9btn.style.color = "red"; 
+  } 
+  else if ((inp1 == 'x' || inp1 == 'X') && (inp5 == 'x' || 
+      inp5 == 'X') && (inp9 == 'x' || inp9 == 'X')) { 
+      document.getElementById('print') 
+          .innerHTML = "Player X won"; 
+      inp2btn.disabled = true; 
+      inp3btn.disabled = true; 
+      inp4btn.disabled = true; 
+      inp6btn.disabled = true; 
+      inp7btn.disabled = true; 
+      inp8btn.disabled = true; 
+
+      inp1btn.style.color = "red"; 
+      inp5btn.style.color = "red"; 
+      inp9btn.style.color = "red"; 
+  } 
+  else if ((inp3 == 'x' || inp3 == 'X') && (inp5 == 'x' || 
+      inp5 == 'X') && (inp7 == 'x' || inp7 == 'X')) { 
+      document.getElementById('print') 
+          .innerHTML = "Player X won"; 
+      inp1btn.disabled = true; 
+      inp2btn.disabled = true; 
+      inp4btn.disabled = true; 
+      inp6btn.disabled = true; 
+      inp8btn.disabled = true; 
+      inp9btn.disabled = true; 
+
+      inp3btn.style.color = "red"; 
+      inp5btn.style.color = "red"; 
+      inp7btn.style.color = "red"; 
+  } 
+  else if ((inp2 == 'x' || inp2 == 'X') && (inp5 == 'x' || 
+      inp5 == 'X') && (inp8 == 'x' || inp8 == 'X')) { 
+      document.getElementById('print') 
+          .innerHTML = "Player X won"; 
+      inp1btn.disabled = true; 
+      inp2btn.disabled = true; 
+      inp4btn.disabled = true; 
+      inp6btn.disabled = true; 
+      inp7btn.disabled = true; 
+      inp9btn.disabled = true; 
+
+      inp2btn.style.color = "red"; 
+      inp5btn.style.color = "red"; 
+      inp8btn.style.color = "red"; 
+  } 
+  else if ((inp4 == 'x' || inp4 == 'X') && (inp5 == 'x' || 
+      inp5 == 'X') && (inp6 == 'x' || inp6 == 'X')) { 
+      document.getElementById('print') 
+          .innerHTML = "Player X won"; 
+      inp1btn.disabled = true; 
+      inp2btn.disabled = true; 
+      inp3btn.disabled = true; 
+      inp7btn.disabled = true; 
+      inp8btn.disabled = true; 
+      inp9btn.disabled = true; 
+
+      inp4btn.style.color = "red"; 
+      inp5btn.style.color = "red"; 
+      inp6btn.style.color = "red"; 
+  } 
+
+  // Checking of Player X finish 
+  // Checking for Player 0 starts, Is player 0 won or 
+  // not and after that disabled all the other fields 
+  else if ((inp1 == '0' || inp1 == '0') && (inp2 == '0' || 
+      inp2 == '0') && (inp3 == '0' || inp3 == '0')) { 
+      document.getElementById('print') 
+          .innerHTML = "Player 0 won"; 
+      inp4btn.disabled = true; 
+      inp5btn.disabled = true; 
+      inp6btn.disabled = true; 
+      inp7btn.disabled = true; 
+      inp8btn.disabled = true; 
+      inp9btn.disabled = true; 
+
+      inp1btn.style.color = "red"; 
+      inp2btn.style.color = "red"; 
+      inp3btn.style.color = "red"; 
+  } 
+  else if ((inp1 == '0' || inp1 == '0') && (inp4 == '0' || 
+      inp4 == '0') && (inp7 == '0' || inp7 == '0')) { 
+      document.getElementById('print') 
+          .innerHTML = "Player 0 won"; 
+      inp2btn.disabled = true; 
+      inp3btn.disabled = true; 
+      inp5btn.disabled = true; 
+      inp6btn.disabled = true; 
+      inp8btn.disabled = true; 
+      inp9btn.disabled = true; 
+
+      inp1btn.style.color = "red"; 
+      inp4btn.style.color = "red"; 
+      inp1btn.style.color = "red"; 
+  } 
+  else if ((inp7 == '0' || inp7 == '0') && (inp8 == '0' || 
+      inp8 == '0') && (inp9 == '0' || inp9 == '0')) { 
+      document.getElementById('print') 
+          .innerHTML = "Player 0 won"; 
+      inp1btn.disabled = true; 
+      inp2btn.disabled = true; 
+      inp3btn.disabled = true; 
+      inp4btn.disabled = true; 
+      inp5btn.disabled = true; 
+      inp6btn.disabled = true; 
+
+      inp7btn.style.color = "red"; 
+      inp8btn.style.color = "red"; 
+      inp9btn.style.color = "red"; 
+  } 
+  else if ((inp3 == '0' || inp3 == '0') && (inp6 == '0' || 
+      inp6 == '0') && (inp9 == '0' || inp9 == '0')) { 
+      document.getElementById('print') 
+          .innerHTML = "Player 0 won"; 
+      inp1btn.disabled = true; 
+      inp2btn.disabled = true; 
+      inp4btn.disabled = true; 
+      inp5btn.disabled = true; 
+      inp7btn.disabled = true; 
+      inp8btn.disabled = true; 
+      inp3btn.style.color = "red"; 
+      inp6btn.style.color = "red"; 
+      inp9btn.style.color = "red"; 
+  } 
+  else if ((inp1 == '0' || inp1 == '0') && (inp5 == '0' || 
+      inp5 == '0') && (inp9 == '0' || inp9 == '0')) { 
+      document.getElementById('print') 
+          .innerHTML = "Player 0 won"; 
+      inp2btn.disabled = true; 
+      inp3btn.disabled = true; 
+      inp4btn.disabled = true; 
+      inp6btn.disabled = true; 
+      inp7btn.disabled = true; 
+      inp8btn.disabled = true; 
+
+      inp1btn.style.color = "red"; 
+      inp5btn.style.color = "red"; 
+      inp9btn.style.color = "red"; 
+  } 
+  else if ((inp3 == '0' || inp3 == '0') && (inp5 == '0' || 
+      inp5 == '0') && (inp7 == '0' || inp7 == '0')) { 
+      document.getElementById('print') 
+          .innerHTML = "Player 0 won"; 
+      inp1btn.disabled = true; 
+      inp2btn.disabled = true; 
+      inp4btn.disabled = true; 
+      inp6btn.disabled = true; 
+      inp8btn.disabled = true; 
+      inp9btn.disabled = true; 
+
+      inp3btn.style.color = "red"; 
+      inp5btn.style.color = "red"; 
+      inp7btn.style.color = "red"; 
+  } 
+  else if ((inp2 == '0' || inp2 == '0') && (inp5 == '0' || 
+      inp5 == '0') && (inp8 == '0' || inp8 == '0')) { 
+      document.getElementById('print') 
+          .innerHTML = "Player 0 won"; 
+      inp1btn.disabled = true; 
+      inp3btn.disabled = true; 
+      inp4btn.disabled = true; 
+      inp6btn.disabled = true; 
+      inp7btn.disabled = true; 
+      inp9btn.disabled = true; 
+
+      inp2btn.style.color = "red"; 
+      inp5btn.style.color = "red"; 
+      inp8btn.style.color = "red"; 
+  } 
+  else if ((inp4 == '0' || inp4 == '0') && (inp5 == '0' || 
+      inp5 == '0') && (inp6 == '0' || inp6 == '0')) { 
+      document.getElementById('print') 
+          .innerHTML = "Player 0 won"; 
+      inp1btn.disabled = true; 
+      inp2btn.disabled = true; 
+      inp3btn.disabled = true; 
+      inp7btn.disabled = true; 
+      inp8btn.disabled = true; 
+      inp9btn.disabled = true; 
+
+      inp4btn.style.color = "red"; 
+      inp5btn.style.color = "red"; 
+      inp6btn.style.color = "red"; 
+  } 
+
+  // Verificação do final do Jogador 0
+  // Here, Checking about Tie 
+  else if ((inp1 == 'X' || inp1 == '0') && (inp2 == 'X'
+      || inp2 == '0') && (inp3 == 'X' || inp3 == '0') && 
+      (inp4 == 'X' || inp4 == '0') && (inp5 == 'X' || 
+          inp5 == '0') && (inp6 == 'X' || inp6 == '0') && 
+      (inp7 == 'X' || inp7 == '0') && (inp8 == 'X' || 
+          inp8 == '0') && (inp9 == 'X' || inp9 == '0')) { 
+      document.getElementById('print') 
+          .innerHTML = "Match Tie"; 
+  } 
+  else { 
+
+      // aqui está printnado o resultado
+      if (flag == 1) { 
+          document.getElementById('print') 
+              .innerHTML = "Player X Turn"; 
+      } 
+      else { 
+          document.getElementById('print') 
+              .innerHTML = "Player 0 Turn"; 
+      } 
+  } 
+} 
+
+// Função pra reiniciar o game 
+function myfunc_2() { 
+  location.reload(); 
+  inp1 = inp2 = inp3 = inp4 = inp5 = inp6 = inp7 = inp8 = inp9 = '';
+} 
+
+// A partir daqui, as funções verificam o giro do player
+// E coloque correspondentemente o valor X ou 0
+flag = 1; 
+function myfunc_3() { 
+  if (flag == 1) { 
+      document.getElementById("inp1").value = "X"; 
+      document.getElementById("inp1").disabled = true; 
+      flag = 0; 
+  } 
+  else { 
+      document.getElementById("inp1").value = "0"; 
+      document.getElementById("inp1").disabled = true; 
+      flag = 1; 
+  } 
+} 
+
+function myfunc_4() { 
+  if (flag == 1) { 
+      document.getElementById("inp2").value = "X"; 
+      document.getElementById("inp2").disabled = true; 
+      flag = 0; 
+  } 
+  else { 
+      document.getElementById("inp2").value = "0"; 
+      document.getElementById("inp2").disabled = true; 
+      flag = 1; 
+  } 
+} 
+
+function myfunc_5() { 
+  if (flag == 1) { 
+      document.getElementById("inp3").value = "X"; 
+      document.getElementById("inp3").disabled = true; 
+      flag = 0; 
+  } 
+  else { 
+      document.getElementById("inp3").value = "0"; 
+      document.getElementById("inp3").disabled = true; 
+      flag = 1; 
+  } 
+} 
+
+function myfunc_6() { 
+  if (flag == 1) { 
+      document.getElementById("inp4").value = "X"; 
+      document.getElementById("inp4").disabled = true; 
+      flag = 0; 
+  } 
+  else { 
+      document.getElementById("inp4").value = "0"; 
+      document.getElementById("inp4").disabled = true; 
+      flag = 1; 
+  } 
+} 
+
+function myfunc_7() { 
+  if (flag == 1) { 
+      document.getElementById("inp5").value = "X"; 
+      document.getElementById("inp5").disabled = true; 
+      flag = 0; 
+  } 
+  else { 
+      document.getElementById("inp5").value = "0"; 
+      document.getElementById("inp5").disabled = true; 
+      flag = 1; 
+  } 
+} 
+
+function myfunc_8() { 
+  if (flag == 1) { 
+      document.getElementById("inp6").value = "X"; 
+      document.getElementById("inp6").disabled = true; 
+      flag = 0; 
+  } 
+  else { 
+      document.getElementById("inp6").value = "0"; 
+      document.getElementById("inp6").disabled = true; 
+      flag = 1; 
+  } 
+} 
+
+function myfunc_9() { 
+  if (flag == 1) { 
+      document.getElementById("inp7").value = "X"; 
+      document.getElementById("inp7").disabled = true; 
+      flag = 0; 
+  } 
+  else { 
+      document.getElementById("inp7").value = "0"; 
+      document.getElementById("inp7").disabled = true; 
+      flag = 1; 
+  } 
+} 
+
+function myfunc_10() { 
+  if (flag == 1) { 
+      document.getElementById("inp8").value = "X"; 
+      document.getElementById("inp8").disabled = true; 
+      flag = 0; 
+  } 
+  else { 
+      document.getElementById("inp8").value = "0"; 
+      document.getElementById("inp8").disabled = true; 
+      flag = 1; 
+  } 
+} 
+
+function myfunc_11() { 
+  if (flag == 1) { 
+      document.getElementById("inp9").value = "X"; 
+      document.getElementById("inp9").disabled = true; 
+      flag = 0; 
+  } 
+  else { 
+      document.getElementById("inp9").value = "0"; 
+      document.getElementById("inp9").disabled = true; 
+      flag = 1; 
+  } 
+} 
+    </script>
+</body>
+
+</html>

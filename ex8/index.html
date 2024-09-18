@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercício 8</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="master-container">
+            <div class="profile-card">
+                <div id="profile-pic">
+                </div>
+                <div id="name"><h1>NOME</h1></div>
+                <div id="personal-data">
+                    <h2 style="text-align: center;">Estudante de Engenharia de Software</h3>
+                    <h2 style="text-align: center;">Univille</h2>
+                    <br>
+                    <h3>IDADE</h2>
+                    <h3>E-mail: loremipsum@gmail.com</h2>
+                    <br>
+                    <br>
+                    <br>
+                    <h3 style="text-align: center;">Joinville/SC - Brasil </h2>
+                </div>
+            </div>
+            <div class="data-container">
+                <div class="tab">
+                    <button class="tablinks" onclick="open_section(event, 'me')" id="defaultopen">Quem sou eu?</button>
+                    <button class="tablinks" onclick="open_section(event, 'exp')">Experiências</button>
+                    <button class="tablinks" onclick="open_section(event, 'edu')">Educação</button>
+                    <button class="tablinks" onclick="open_section(event, 'skills')">Skills</button>
+                </div>
+
+                <div id="exp" class="tabcontent">
+                    <h2>Lorem Ipsum</h2>
+                    <p>Lorem ipsum</p>
+                </div>
+                <div id="edu" class="tabcontent">
+                    <h2>Lorem Ipsum</h2>
+                    <details class="education-list">
+                        <summary> Lorem Ipsum</summary>
+                        Lorem Ipsum
+                    </details>
+                    <details class="education-list">
+                        <summary> Lorem Ipsum</summary>
+                        Lorem Ipsum
+                    </details>
+                    <details class="education-list">
+                        <summary> Lorem Ipsum </summary>
+                        Lorem Ipsum
+                    </details>
+                </div>
+                <div id="skills" class="tabcontent">
+                    <div id="header"><h2>Lorem Ipsum</h2></div>
+                    <div id="skills-container">
+                        <div id="hard-skills">
+                            <h2> Hard Skills </h2>
+                            <ul>
+                                <li>lorem ipsum</li>
+                                <li>lorem ipsum</li>
+                                <li>lorem ipsum</li>
+                                <li>lorem ipsum</li>
+                                <li>lorem ipsum</li>
+                                <li>lorem ipsum</li>
+                            </ul>
+                        </div>
+                        <div id="soft-skills">
+                            <h2> Soft skills </h2>
+                            <ul>
+                                <li>lorem ipsum</li>
+                                <li>lorem ipsum</li>
+                                <li>lorem ipsum</li>
+                                <li>lorem ipsum</li>
+                                <li>lorem ipsum</li>
+                                <li>lorem ipsum</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="me" class="tabcontent">
+                    Lorem Ipsum
+                </div>
+            </div>
+            <footer class="footer">
+                <div id="author-data">
+                    <h2> Made by Luke_Dev © </h2>
+                </div>
+                <div id="social-media">
+                    ESPAÇO PARA MIDIAS SOCIAIS
+                </div>
+            </footer>
+        </div>
+        <script src="scripts.js"></script>
+    </body>
+</html>

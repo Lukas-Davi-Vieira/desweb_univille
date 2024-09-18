@@ -1,0 +1,174 @@
+#master-container {
+    position: absolute;
+    background-color: whitesmoke;
+    padding: 32px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#master-container > img {
+    width: 100%;
+    height: 100%;
+    position: inherit;
+    z-index: 0;
+}
+
+#sub-wrapper {
+    background-color: rgb(255, 255, 255, 0.3);
+    width: 97.5%;
+    height: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 64px;
+    z-index: 1;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur();
+}
+
+#header {
+    height: 15%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 64px 64px 0px 0px;
+    justify-content: right;
+    align-items: center;
+}
+
+#header > button {
+    position: relative;
+    height: 50%;
+    width: 7.5%;
+    margin-right: 48px;
+    margin-left: -32px;
+    border-radius: 24px;
+    border-style: none;
+    background-color: rgba(214, 230, 230, 0.4);
+    color: rgba(245, 245, 245, 0.8);
+    font-weight: bolder;
+    font-size: x-large;
+    transition-property: background-color;
+    transition-duration: 0.1s;
+    font-family: "Pacifico";
+    font-style: italic;
+}
+
+#header > button:active {
+    background-color: rgba(65, 105, 225, 0.2);
+}
+
+#header > button:hover {
+    border-style: solid;
+    border-width: 1px;
+    border-color: whitesmoke;
+}
+
+#modal-container {
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: none;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.dialog {
+    position: fixed;
+    display: none;
+    height: 60%;
+    width: 25%;
+    background-color: rgb(32, 32, 36);
+    border-radius: 64px;
+    border-style: none;
+    flex-direction: column;
+}
+
+.form-header {
+    position: relative;
+    height: 15%;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    border-radius: 64px 64px 0px 0px;
+    font-family: "Pacifico";
+    font-style: italic;
+    color: rgb(245, 245, 245);
+    font-weight: bolder;
+    font-size: xx-large;
+    box-sizing: border-box;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(245, 245, 245, 0.8);
+}
+
+.form-container {
+    position: relative;
+    height: 85%;
+    width: 100%;
+    border-radius: 0px 0px 64px 64px;
+    display: flex;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border-radius: 0px 0px 64px 64px;
+}
+
+.field {
+    font-size: medium;
+    margin: 6px;
+    border-radius: 24px;
+    border-style: none;
+    width: 70%;
+    height: 10%;
+    padding: 8px;
+    box-sizing: border-box;
+    outline: none;
+    margin-bottom: -8px;
+}
+
+.submit-button {
+    margin: 6px;
+    border-style: none;
+    width: 70%;
+    margin-top: 32px;
+    height: 10%;
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 24px;
+    font-weight: bolder;
+    font-size: x-large;
+    transition-property: background-color;
+    transition-duration: 0.1s;
+    font-family: "Pacifico";
+    font-style: italic;
+}
+
+.submit-button:hover {
+    background-color: gray;
+}

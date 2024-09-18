@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cdbootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cdbootstrap/css/cdb.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/cdbootstrap/js/cdb.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cdbootstrap/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/9d1d9a82d2.js" crossorigin="anonymous"></script>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            z-index: 0;
+            flex-direction: column-reverse;
+        }
+        
+        .chart-container {
+          margin: auto;
+          height: 80%;
+          width: 50%;
+        }
+
+        #card-centralizer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            height: 70%;
+            box-sizing: border-box;
+            padding: 32px;
+            border-style: none;
+            outline: none;
+            z-index: 1;
+        }
+
+        #controllers {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            height: 30%;
+            box-sizing: border-box;
+            border-style: none;
+            outline-style: none;
+            padding: 32px;
+            z-index: 1;
+        }
+
+        #chart-general-container {
+            display: flex;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 32px;
+            border-style: none;
+        }
+
+        #controller-card {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            background-color: whitesmoke;
+            border-radius: 32px;
+            border-style: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form > input {
+          outline: none;
+          border-radius: 32px;
+          border-style: none;
+          padding: 8px;
+          box-sizing: border-box;
+          text-align: center;
+          margin: 6px;
+        }
+
+        body > img {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 0;
+        }
+      </style>
+    <title>ex10</title>
+</head>
+<body>
+    <img src="assets/Beautiful-Aesthetic-Desktop-Background-1.jpg">
+    <div id="controllers">
+        <div id="controller-card">
+            <form id="controlador">
+              <input name="dados" type="text" placeholder="Nome do dado">
+              <input name="valor" type="text" placeholder="Valor">
+              <input name="enviar" type="submit" value="Enviar dados" style="width: 200px;" >
+            </form>
+        </div>
+    </div>
+    <div id="card-centralizer">
+        <div id="chart-general-container">
+            <div class="card chart-container">
+                <canvas id="chart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+    <script>
+        const ctx = document.getElementById("chart").getContext('2d');
+        const myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: [],
+            datasets: [{
+              label: 'Meus dados',
+              backgroundColor: 'rgba(161, 198, 247, 1)',
+              borderColor: 'rgb(47, 128, 237)',
+              data: []
+            }]
+          },
+          options: {
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true,
+                }
+              }]
+            }
+          },
+        });
+
+      const my_form = document.getElementById("controlador");
+      my_form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const dados = new FormData(my_form);
+        const nome = dados.get("dados");
+        const valores = dados.get("valor");
+        myChart.data.labels.push(nome);
+        myChart.data.datasets[0].data.push(valores);
+        myChart.update();
+      });
+  </script>
+</body>
+</html>
